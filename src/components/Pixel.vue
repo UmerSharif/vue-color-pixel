@@ -1,5 +1,5 @@
 <template>
-    <div class="hello">
+    <div class="pixel">
       
     </div>
 </template>
@@ -9,7 +9,7 @@
     import {mapGetters, mapState, mapMutations} from 'vuex'
 
     export default {
-        name: 'HelloWorld'
+        name: 'Pixel'
         
 
     }
@@ -17,5 +17,10 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+    .pixel {
+        border: 1px solid lightgray;
+        width: 30px;
+        height: 30px;
+        box-sizing: border-box;
+    }
 </style>
