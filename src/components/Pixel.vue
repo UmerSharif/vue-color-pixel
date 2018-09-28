@@ -12,13 +12,18 @@
         name: 'Pixel',
         props : {
             color : String,
-            current : Boolean
+            current : Boolean,
+            interactive : Boolean
         },
 
         methods : {
             changeColor(color) {
-                this.$root.$emit('updateColor' , color)
-                console.log(color)
+                if(this.interactive) {
+                    this.$root.$emit('updateColor', color)
+                    console.log(color)
+                } else {
+                    return
+                }
             }
         }
 
