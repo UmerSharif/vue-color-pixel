@@ -1,16 +1,23 @@
 <template>
   <div id="app">
-   <Canvas/>
+      <ColorPicker :color = 'color'/>
+   <Canvas />
     <router-view/>
   </div>
 </template>
 <script>
     import Canvas from './components/Canvas'
-
+    import ColorPicker from './components/ColorPicker'
     export default {
         name: 'App',
         components: {
-            Canvas
+            Canvas,
+            ColorPicker
+        },
+        data(){
+            return {
+                color : 'white'
+            }
         }
 
     }
