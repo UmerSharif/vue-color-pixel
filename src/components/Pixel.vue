@@ -1,6 +1,6 @@
 <template>
     <div class="pixel">
-        <div @click = "changeColor(color)" :class="['pixel', color , current ? 'current' : '']"></div>
+        <div @click="interactive && changeColor(color)" :class="['pixel', color , current ? 'current' : '']"></div>
     </div>
 </template>
 
@@ -10,21 +10,18 @@
 
     export default {
         name: 'Pixel',
-        props : {
-            color : String,
-            current : Boolean,
-            interactive : Boolean
+        props: {
+            color: String,
+            current: Boolean,
+            interactive: Boolean
         },
 
-        methods : {
+        methods: {
             changeColor(color) {
-                if(this.interactive) {
-                    this.$root.$emit('updateColor', color)
-                    console.log(color)
-                } else {
-                    return
-                }
+                this.$root.$emit('updateColor', color)
+                console.log(color)
             }
+
         }
 
 
@@ -47,12 +44,15 @@
     .white {
         background-color: white;
     }
+
     .lightblue {
         background-color: rgb(0, 188, 212);
     }
+
     .blue {
         background-color: rgb(3, 169, 244);
     }
+
     .darkblue {
         background-color: rgb(33, 150, 243);
     }
