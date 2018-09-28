@@ -1,35 +1,42 @@
 <template>
-  <div id="app">
-      <ColorPicker :color = 'color'/>
-   <Canvas />
-    <router-view/>
-  </div>
+    <div id="app">
+        <ColorPicker :color='color'/>
+        <Canvas/>
+        <router-view/>
+    </div>
 </template>
 <script>
     import Canvas from './components/Canvas'
     import ColorPicker from './components/ColorPicker'
+
     export default {
         name: 'App',
         components: {
             Canvas,
             ColorPicker
         },
-        data(){
+        data() {
             return {
-                color : 'white'
+                color: 'white'
             }
+        },
+
+        mounted() {
+            this.$root.$on('updateColor', (color) => {
+                this.color = color
+            })
         }
 
     }
 </script>
 <style lang="scss">
-  #app {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-      color: #2c3e50;
-      margin-top: 60px;
-  }
+    #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 60px;
+    }
 
 </style>

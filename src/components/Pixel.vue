@@ -1,6 +1,6 @@
 <template>
     <div class="pixel">
-        <div :class="['pixel', color , current ? 'current' : '']"></div>
+        <div @click = "changeColor(color)" :class="['pixel', color , current ? 'current' : '']"></div>
     </div>
 </template>
 
@@ -13,6 +13,13 @@
         props : {
             color : String,
             current : Boolean
+        },
+
+        methods : {
+            changeColor(color) {
+                this.$root.$emit('updateColor' , color)
+                console.log(color)
+            }
         }
 
 
@@ -31,8 +38,6 @@
             border: 4px solid yellow;
         }
     }
-
-
 
     .white {
         background-color: white;
