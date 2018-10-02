@@ -27,10 +27,6 @@
 <style scoped lang="scss">
 .canvas {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     .pixel-class {
         display: flex;
         flex-wrap: wrap;
