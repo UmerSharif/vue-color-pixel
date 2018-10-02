@@ -1,6 +1,6 @@
 <template>
     <div class="pixel">
-        <div @click="interactive && changeColor(color)" :class="['pixel', color , current ? 'current' : '']"></div>
+        <div @click="handleClick" :class="['pixel', color , current ? 'current' : '']"></div>
     </div>
 </template>
 
@@ -13,13 +13,16 @@
         props: {
             color: String,
             current: Boolean,
-            interactive: Boolean
+            isInColorPicker: Boolean,
+            isInCanvas: Boolean
         },
 
         methods: {
-            changeColor(color) {
-                this.$root.$emit('updateColor', color)
-                console.log(color)
+            handleClick() {
+                if(this.isInColorPicker) {
+                    this.$root.$emit('updateColor', this.color)
+                    console.log(this.color)
+                }
             }
 
         }

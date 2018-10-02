@@ -1,7 +1,7 @@
 <template>
     <div class="canvas">
         <div class="pixel-class">
-        <Pixel v-for="i in 30*30" :key = "i" color="lightblue"/>
+        <Pixel v-for="("/>
         </div>
     </div>
 </template>
@@ -15,6 +15,9 @@
         name: 'Canvas',
         components: {
             Pixel
+        },
+        props : {
+
         }
 
     }

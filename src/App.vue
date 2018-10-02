@@ -1,14 +1,14 @@
 <template>
     <div id="app">
         <ColorPicker :color='color'/>
-        <Canvas/>
+        <Canvas :pixels=pixels />
         <router-view/>
     </div>
 </template>
 <script>
     import Canvas from './components/Canvas'
     import ColorPicker from './components/ColorPicker'
-
+    const defaultColor = 'white'
     export default {
         name: 'App',
         components: {
@@ -17,7 +17,10 @@
         },
         data() {
             return {
-                color: 'white'
+                color: defaultColor,
+                pixels: Array(30 * 30)
+                    .fill()
+                    .map(() => defaultColor)
             }
         },
 
