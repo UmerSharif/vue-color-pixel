@@ -1,5 +1,6 @@
 <template>
     <div class="colorpicker">
+        <!--the color prop is from colorpicker component-->
         <Pixel isInColorPicker color="white" :current="color == 'white' ? true : false"/>
         <Pixel isInColorPicker color="lightblue" :current="color == 'lightblue' ? true : false"/>
         <Pixel isInColorPicker color="blue" :current="color == 'blue' ? true : false" />

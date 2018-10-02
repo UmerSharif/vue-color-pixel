@@ -1,6 +1,7 @@
 <template>
     <div class="canvas">
         <div class="pixel-class">
+            <!--the color prop is from app-->
             <Pixel v-for="(color, index) in pixels" :key="index" :color="color" :index=index isInCanvas/>
         </div>
     </div>
