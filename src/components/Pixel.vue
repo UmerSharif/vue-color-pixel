@@ -14,7 +14,8 @@
             color: String,
             current: Boolean,
             isInColorPicker: Boolean,
-            isInCanvas: Boolean
+            isInCanvas: Boolean,
+            index : Number
         },
 
         methods: {
@@ -22,6 +23,10 @@
                 if(this.isInColorPicker) {
                     this.$root.$emit('updateColor', this.color)
                     console.log(this.color)
+                }
+
+                if(this.isInCanvas) {
+                this.$root.$emit('clickedPixel' , this.index)
                 }
             }
 

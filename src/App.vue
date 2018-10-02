@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <ColorPicker :color='color'/>
+        <ColorPicker/>
         <Canvas :pixels=pixels />
         <router-view/>
     </div>
@@ -28,6 +28,11 @@
             this.$root.$on('updateColor', (color) => {
                 this.color = color
             })
+
+            this.$root.$on('clickedPixel', (index) => {
+                this.pixels.splice(index, 1 , this.color)
+            })
+
         }
 
     }
