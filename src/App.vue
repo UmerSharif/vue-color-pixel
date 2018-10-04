@@ -1,7 +1,7 @@
 <template>
     <div id="app">
         <ColorPicker/>
-        <Canvas :pixels=pixels />
+        <Canvas />
         <router-view/>
     </div>
 </template>
@@ -14,26 +14,9 @@
         components: {
             Canvas,
             ColorPicker
-        },
-        data() {
-            return {
-                color: defaultColor,
-                pixels: Array(30 * 30)
-                    .fill()
-                    .map(() => defaultColor)
-            }
-        },
-
-        mounted() {
-            this.$root.$on('updateColor', (color) => {
-                this.color = color
-            })
-
-            this.$root.$on('clickedPixel', (index) => {
-                this.pixels.splice(index, 1 , this.color)
-            })
-
         }
+      
+     
 
     }
 </script>

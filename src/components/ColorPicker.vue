@@ -17,10 +17,6 @@
         name: 'ColorPicker',
         components: {
             Pixel
-        },
-
-        props : {
-            color : String
         }
 
 

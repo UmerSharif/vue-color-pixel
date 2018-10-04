@@ -1,6 +1,6 @@
 <template>
     <div class="pixel">
-        <div @click="handleClick" :class="['pixel', color , current ? 'current' : '']"></div>
+       
     </div>
 </template>
 
@@ -9,29 +9,8 @@
     //import {mapGetters, mapState, mapMutations} from 'vuex'
 
     export default {
-        name: 'Pixel',
-        props: {
-            color: String,
-            current: Boolean,
-            isInColorPicker: Boolean,
-            isInCanvas: Boolean,
-            index : Number
-        },
-
-        methods: {
-            handleClick() {
-                if(this.isInColorPicker) {
-                    this.$root.$emit('updateColor', this.color)
-                    console.log(this.color)
-                }
-
-                if(this.isInCanvas) {
-                this.$root.$emit('clickedPixel' , this.index)
-                }
-            }
-
-        }
-
+        name: 'Pixel'
+        
 
     }
 </script>
